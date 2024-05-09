@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		873B2F082BEB215900CED958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F072BEB215900CED958 /* AppDelegate.swift */; };
 		873B2F0A2BEB215900CED958 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F092BEB215900CED958 /* SceneDelegate.swift */; };
-		873B2F0C2BEB215900CED958 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F0B2BEB215900CED958 /* ViewController.swift */; };
+		873B2F0C2BEB215900CED958 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F0B2BEB215900CED958 /* HomeViewController.swift */; };
 		873B2F112BEB215B00CED958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873B2F102BEB215B00CED958 /* Assets.xcassets */; };
 		873B2F142BEB215B00CED958 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 873B2F132BEB215B00CED958 /* Base */; };
 /* End PBXBuildFile section */
@@ -18,7 +18,7 @@
 		873B2F042BEB215900CED958 /* MeliSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B2F072BEB215900CED958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		873B2F092BEB215900CED958 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		873B2F0B2BEB215900CED958 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		873B2F0B2BEB215900CED958 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		873B2F102BEB215B00CED958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		873B2F132BEB215B00CED958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B2F152BEB215B00CED958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,9 +54,10 @@
 		873B2F062BEB215900CED958 /* MeliSearch */ = {
 			isa = PBXGroup;
 			children = (
+				873B2F152BEB215B00CED958 /* Info.plist */,
 				873B2F1C2BEC52A000CED958 /* AppConfiguration */,
 				873B2F1B2BEC4FD900CED958 /* Common */,
-				873B2F0B2BEB215900CED958 /* ViewController.swift */,
+				873B2F1F2BEC533200CED958 /* Scene */,
 			);
 			path = MeliSearch;
 			sourceTree = "<group>";
@@ -71,13 +72,36 @@
 		873B2F1C2BEC52A000CED958 /* AppConfiguration */ = {
 			isa = PBXGroup;
 			children = (
-				873B2F152BEB215B00CED958 /* Info.plist */,
 				873B2F072BEB215900CED958 /* AppDelegate.swift */,
 				873B2F102BEB215B00CED958 /* Assets.xcassets */,
 				873B2F122BEB215B00CED958 /* LaunchScreen.storyboard */,
 				873B2F092BEB215900CED958 /* SceneDelegate.swift */,
 			);
 			path = AppConfiguration;
+			sourceTree = "<group>";
+		};
+		873B2F1D2BEC531800CED958 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				873B2F0B2BEB215900CED958 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		873B2F1E2BEC532600CED958 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		873B2F1F2BEC533200CED958 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				873B2F1E2BEC532600CED958 /* Details */,
+				873B2F1D2BEC531800CED958 /* Home */,
+			);
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B2F0C2BEB215900CED958 /* ViewController.swift in Sources */,
+				873B2F0C2BEB215900CED958 /* HomeViewController.swift in Sources */,
 				873B2F082BEB215900CED958 /* AppDelegate.swift in Sources */,
 				873B2F0A2BEB215900CED958 /* SceneDelegate.swift in Sources */,
 			);

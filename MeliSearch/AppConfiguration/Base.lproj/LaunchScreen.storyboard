@@ -24,7 +24,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.57647061349999995" green="0.14509806040000001" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Z4P-Fe-6yz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="HwM-Pi-w5U"/>
                             <constraint firstItem="Z4P-Fe-6yz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="rrN-9l-fC8"/>
@@ -38,8 +38,5 @@
     </scenes>
     <resources>
         <image name="mercao-livre-logo" width="620" height="430"/>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
