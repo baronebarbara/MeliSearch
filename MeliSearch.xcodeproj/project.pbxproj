@@ -56,6 +56,7 @@
 		873B2F062BEB215900CED958 /* MeliSearch */ = {
 			isa = PBXGroup;
 			children = (
+				873B2F1B2BEC4FD900CED958 /* Common */,
 				873B2F072BEB215900CED958 /* AppDelegate.swift */,
 				873B2F092BEB215900CED958 /* SceneDelegate.swift */,
 				873B2F0B2BEB215900CED958 /* ViewController.swift */,
@@ -65,6 +66,13 @@
 				873B2F152BEB215B00CED958 /* Info.plist */,
 			);
 			path = MeliSearch;
+			sourceTree = "<group>";
+		};
+		873B2F1B2BEC4FD900CED958 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
