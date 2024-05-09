@@ -27,6 +27,22 @@ final class HomeViewController: UIViewController {
         return label
     }()
     
+    private lazy var collection: UICollectionView = {
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.register(HomeViewCell.self, forCellWithReuseIdentifier: "HomeViewCell")
+        collection.dataSource = self
+        collection.delegate = self
+        collection.showsVerticalScrollIndicator = false
+        return collection
+    }()
+    
+    private lazy var layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 12
+        return layout
+    }()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -36,6 +52,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buildLayout()
+        title = "Produtos"
     }
 }
 
@@ -49,6 +66,7 @@ extension HomeViewController: ViewConfiguration {
         view.addSubview(searchView)
         view.addSubview(mainStack)
         mainStack.addArrangedSubview(productsLabel)
+        mainStack.addArrangedSubview(collection)
     }
     
     func setupConstraints() {
@@ -58,8 +76,31 @@ extension HomeViewController: ViewConfiguration {
             searchView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             
             mainStack.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 24),
-            mainStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 24),
-            mainStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -24),
+            mainStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            mainStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            mainStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+}
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeViewCell", for: indexPath) as? HomeViewCell else {
+            return UICollectionViewCell()
+        }
+        return cell
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        let height: CGFloat = 200
+        
+        return CGSize(width: width, height: height)
     }
 }
