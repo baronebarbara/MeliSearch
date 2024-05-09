@@ -13,6 +13,7 @@
 		873B2F112BEB215B00CED958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 873B2F102BEB215B00CED958 /* Assets.xcassets */; };
 		873B2F142BEB215B00CED958 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 873B2F132BEB215B00CED958 /* Base */; };
 		873B2F222BEC55AB00CED958 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F212BEC55AB00CED958 /* ViewConfiguration.swift */; };
+		873B2F252BEC5DBF00CED958 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F242BEC5DBF00CED958 /* HomeViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		873B2F132BEB215B00CED958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B2F152BEB215B00CED958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		873B2F212BEC55AB00CED958 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		873B2F242BEC5DBF00CED958 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		873B2F1D2BEC531800CED958 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				873B2F262BEC5DC300CED958 /* Cell */,
 				873B2F0B2BEB215900CED958 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -105,6 +108,14 @@
 				873B2F1D2BEC531800CED958 /* Home */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		873B2F262BEC5DC300CED958 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				873B2F242BEC5DBF00CED958 /* HomeViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 			files = (
 				873B2F0C2BEB215900CED958 /* HomeViewController.swift in Sources */,
 				873B2F222BEC55AB00CED958 /* ViewConfiguration.swift in Sources */,
+				873B2F252BEC5DBF00CED958 /* HomeViewCell.swift in Sources */,
 				873B2F082BEB215900CED958 /* AppDelegate.swift in Sources */,
 				873B2F0A2BEB215900CED958 /* SceneDelegate.swift in Sources */,
 			);
