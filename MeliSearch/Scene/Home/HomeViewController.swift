@@ -1,3 +1,4 @@
+import SwiftUI
 import UIKit
 
 final class HomeViewController: UIViewController {
@@ -56,7 +57,6 @@ final class HomeViewController: UIViewController {
     }
 }
 
-
 extension HomeViewController: ViewConfiguration {
     func configViews() {
         view.backgroundColor = .white
@@ -93,6 +93,16 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             return UICollectionViewCell()
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedProduct = Product(id: 1, name: "Akina", description: "Não esta a venda apenas demonstração, porém quentinha e linda", price: 200.00)
+        
+        let detailProduct = ProductDetailsView(product: selectedProduct)
+        
+        let hostingController = UIHostingController(rootView: detailProduct)
+        
+        self.present(hostingController, animated: true)
     }
 }
 
