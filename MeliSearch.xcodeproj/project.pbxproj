@@ -15,6 +15,7 @@
 		873B2F222BEC55AB00CED958 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F212BEC55AB00CED958 /* ViewConfiguration.swift */; };
 		873B2F252BEC5DBF00CED958 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F242BEC5DBF00CED958 /* HomeViewCell.swift */; };
 		873B2F282BEC691400CED958 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F272BEC691400CED958 /* ProductDetailsView.swift */; };
+		873B2F2C2BEDB51300CED958 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F2B2BEDB51300CED958 /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		873B2F212BEC55AB00CED958 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		873B2F242BEC5DBF00CED958 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		873B2F272BEC691400CED958 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
+		873B2F2B2BEDB51300CED958 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,8 @@
 		873B2F062BEB215900CED958 /* MeliSearch */ = {
 			isa = PBXGroup;
 			children = (
+				873B2F2A2BEDB4F400CED958 /* Service */,
+				873B2F292BEDB4DD00CED958 /* Networking */,
 				873B2F152BEB215B00CED958 /* Info.plist */,
 				873B2F1C2BEC52A000CED958 /* AppConfiguration */,
 				873B2F1B2BEC4FD900CED958 /* Common */,
@@ -119,6 +123,21 @@
 				873B2F242BEC5DBF00CED958 /* HomeViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		873B2F292BEDB4DD00CED958 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				873B2F2B2BEDB51300CED958 /* Request.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		873B2F2A2BEDB4F400CED958 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +214,7 @@
 				873B2F222BEC55AB00CED958 /* ViewConfiguration.swift in Sources */,
 				873B2F252BEC5DBF00CED958 /* HomeViewCell.swift in Sources */,
 				873B2F082BEB215900CED958 /* AppDelegate.swift in Sources */,
+				873B2F2C2BEDB51300CED958 /* Request.swift in Sources */,
 				873B2F0A2BEB215900CED958 /* SceneDelegate.swift in Sources */,
 				873B2F282BEC691400CED958 /* ProductDetailsView.swift in Sources */,
 			);

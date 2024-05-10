@@ -6,7 +6,7 @@ final class HomeViewController: UIViewController {
         let search = UISearchBar()
         search.translatesAutoresizingMaskIntoConstraints = false
         search.layer.cornerRadius = 16
-        search.placeholder = "Procure por seus produtos"
+        search.placeholder = "Buscar produtos no MeliSearch"
         return search
     }()
     
