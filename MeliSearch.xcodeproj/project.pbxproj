@@ -16,6 +16,8 @@
 		873B2F252BEC5DBF00CED958 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F242BEC5DBF00CED958 /* HomeViewCell.swift */; };
 		873B2F282BEC691400CED958 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F272BEC691400CED958 /* ProductDetailsView.swift */; };
 		873B2F2C2BEDB51300CED958 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F2B2BEDB51300CED958 /* Request.swift */; };
+		873B2F2E2BEDB8F800CED958 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F2D2BEDB8F800CED958 /* Network.swift */; };
+		873B2F302BEDBA0100CED958 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873B2F2F2BEDBA0100CED958 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		873B2F242BEC5DBF00CED958 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
 		873B2F272BEC691400CED958 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 		873B2F2B2BEDB51300CED958 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		873B2F2D2BEDB8F800CED958 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		873B2F2F2BEDBA0100CED958 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				873B2F2B2BEDB51300CED958 /* Request.swift */,
+				873B2F2D2BEDB8F800CED958 /* Network.swift */,
+				873B2F2F2BEDBA0100CED958 /* API.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -212,10 +218,12 @@
 			files = (
 				873B2F0C2BEB215900CED958 /* HomeViewController.swift in Sources */,
 				873B2F222BEC55AB00CED958 /* ViewConfiguration.swift in Sources */,
+				873B2F2E2BEDB8F800CED958 /* Network.swift in Sources */,
 				873B2F252BEC5DBF00CED958 /* HomeViewCell.swift in Sources */,
 				873B2F082BEB215900CED958 /* AppDelegate.swift in Sources */,
 				873B2F2C2BEDB51300CED958 /* Request.swift in Sources */,
 				873B2F0A2BEB215900CED958 /* SceneDelegate.swift in Sources */,
+				873B2F302BEDBA0100CED958 /* API.swift in Sources */,
 				873B2F282BEC691400CED958 /* ProductDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
