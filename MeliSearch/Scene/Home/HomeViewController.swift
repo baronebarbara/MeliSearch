@@ -43,6 +43,7 @@ final class HomeViewController: UIViewController {
         layout.minimumLineSpacing = 12
         return layout
     }()
+    let service = ProductSearchService()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -54,6 +55,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         buildLayout()
         title = "Produtos"
+        service.fetchProducts(siteID: "MLA", categoryID: "MLA1055")
     }
 }
 

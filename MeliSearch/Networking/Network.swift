@@ -8,11 +8,11 @@ enum NetworkError: Error {
 }
 
 protocol NetworkProtocol {
-    func execute<T: Codable>(with request: Request, completion: @escaping (Result<T, Error>) -> Void)
+    func execute<T: Decodable>(with request: Request, completion: @escaping (Result<T, Error>) -> Void)
 }
 
 final class Network: NetworkProtocol {
-    func execute<T: Codable>(with request: Request, completion: @escaping (Result<T, Error>) -> Void) {
+    func execute<T: Decodable>(with request: Request, completion: @escaping (Result<T, Error>) -> Void) {
         var components = URLComponents(string: API.baseURL + request.endpoint)
         
         components?.queryItems = request.parameters.map {
