@@ -1,6 +1,10 @@
 import SwiftUI
 import UIKit
 
+protocol HomeViewControlleProtocol: AnyObject {
+    
+}
+
 final class HomeViewController: UIViewController {
     private lazy var searchView: UISearchBar = {
         let search = UISearchBar()

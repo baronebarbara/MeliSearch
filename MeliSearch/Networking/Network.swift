@@ -4,7 +4,8 @@ enum NetworkError: Error {
     case invalidURL,
          invalidResponse,
          noData,
-         decodingError(description: String)
+         decodingError(description: String),
+         requestError(description: String)
 }
 
 protocol NetworkProtocol {
@@ -30,7 +31,7 @@ final class Network: NetworkProtocol {
         
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
-                completion(.failure(NetworkError.invalidURL))
+                completion(.failure(NetworkError.requestError(description: error.localizedDescription)))
                 return
             }
             

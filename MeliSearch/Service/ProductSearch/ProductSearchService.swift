@@ -1,7 +1,7 @@
 import Foundation
 
 protocol ProductSearchServiceProtocol {
-    
+    func fetchProducts(siteID: String, categoryID: String, completion: @escaping ((Result<ProductList, Error>) -> Void))
 }
 
 final class ProductSearchService: ProductSearchServiceProtocol {
@@ -11,20 +11,16 @@ final class ProductSearchService: ProductSearchServiceProtocol {
         self.network = network
     }
     
-    func fetchProducts(siteID: String, categoryID: String) {
+    func fetchProducts(siteID: String, categoryID: String, completion: @escaping ((Result<ProductList, Error>) -> Void)) {
         let request = ProductSearchRequest(siteID: siteID, categoryID: categoryID)
         
-        network.execute(with: request) { (result: Result<ProductTe, Error>) in
+        network.execute(with: request) { (result: Result<ProductList, Error>) in
             switch result {
             case .success(let response):
-                print(response)
+                completion(.success(response))
             case .failure(let error):
-                print(error.localizedDescription)
+                completion(.failure(error))
             }
         }
     }
-}
-
-struct ProductTe: Decodable {
-    let site_id: String
 }
