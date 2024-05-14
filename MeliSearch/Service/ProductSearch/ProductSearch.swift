@@ -1,8 +1,8 @@
 import Foundation
 
-struct ProductList: Decodable {
+struct ProductSearch: Decodable {
     let totalResults: Int
-    let results: [ProductListDetail]
+    let results: [ProductSearchDetail]
     
     private enum CodingKeys: String, CodingKey {
         case paging,
@@ -10,14 +10,14 @@ struct ProductList: Decodable {
              results
     }
     
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let paging = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .paging)
         totalResults = try paging.decode(Int.self, forKey: .total)
-        results = try container.decode([ProductListDetail].self, forKey: .results)
+        results = try container.decode([ProductSearchDetail].self, forKey: .results)
     }
     
-    struct ProductListDetail: Decodable {
+    struct ProductSearchDetail: Decodable {
         let id: String
         let title: String
         let price: Double

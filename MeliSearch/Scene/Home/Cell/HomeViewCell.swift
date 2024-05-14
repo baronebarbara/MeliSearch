@@ -29,7 +29,7 @@ final class HomeViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 18)
-        label.textColor = UIColor(named: "clr_background")
+        label.textColor = UIColor(named: Strings.Color.background)
         label .text = "Naldinho"
         return label
     }()
@@ -38,7 +38,7 @@ final class HomeViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = .lightGray
+        label.textColor = UIColor(named: Strings.Color.lightGray)
         label.text = "R$ 500,00"
         return label
     }()

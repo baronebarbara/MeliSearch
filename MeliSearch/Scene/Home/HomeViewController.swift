@@ -10,7 +10,7 @@ final class HomeViewController: UIViewController {
         let search = UISearchBar()
         search.translatesAutoresizingMaskIntoConstraints = false
         search.layer.cornerRadius = 16
-        search.placeholder = "Buscar produtos no MeliSearch"
+        search.placeholder = Strings.HomeStrings.searchPlaceholderText
         return search
     }()
     
@@ -24,8 +24,8 @@ final class HomeViewController: UIViewController {
     
     private lazy var productsLabel: UILabel = {
         let label = UILabel()
-        label.text = "Conheça seus produtos disponíveis:"
-        label.textColor = UIColor(named: "clr_background")
+        label.text = Strings.HomeStrings.productsLabelText
+        label.textColor = UIColor(named: Strings.Color.background)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
@@ -58,8 +58,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         buildLayout()
-        title = "Produtos"
-        service.fetchProducts(siteID: "MLA", categoryID: "MLA1055")
+        title = Strings.HomeStrings.title
     }
 }
 
