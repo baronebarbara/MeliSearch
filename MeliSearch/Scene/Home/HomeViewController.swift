@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-protocol HomeViewControlleProtocol: AnyObject {
+protocol HomeViewControllerProtocol: AnyObject {
     
 }
 

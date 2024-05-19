@@ -2,14 +2,24 @@ import Foundation
 
 struct ProductSearchRequest: Request {
     var method: HTTPMethod = .get
-    var endpoint: String { "sites/\(siteID)/search" }
-    var parameters: [URLQueryItem] { [URLQueryItem(name: "category", value: categoryID)] }
+    var endpoint: String {
+        guard let host = ApiURLConfig.host, let site = ApiURLConfig.site else { return "" }
+        
+        return "\(host)/sites/\(site)/search"
+    }
+    var parameters: [URLQueryItem] { [URLQueryItem(name: "q", value: text),
+                                      URLQueryItem(name: "limit", value: String(itemsPerPage)),
+                                      URLQueryItem(name: "offset", value: String(page))] }
     
-    private var siteID: String
-    private var categoryID: String
+    private var text: String
+    private var itemsPerPage: Int
+    private var page: Int
     
-    init(siteID: String, categoryID: String) {
-        self.siteID = siteID
-        self.categoryID = categoryID
+    init(text: String,
+         itemsPerPage: Int,
+         page: Int) {
+        self.text = text
+        self.itemsPerPage = itemsPerPage
+        self.page = page
     }
 }

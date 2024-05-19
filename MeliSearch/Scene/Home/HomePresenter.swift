@@ -4,13 +4,14 @@ protocol HomePresenterProtocol {
     func present(productSearch: ProductSearch)
     func present(selectedItem: ProductSearch)
     func presentLoading()
+    func stopLoading()
     func presentEmptyState()
     func presentError()
     func presentetInitialState()
 }
 
 final class HomePresenter: HomePresenterProtocol {
-    weak var viewControllerr: HomeViewControlleProtocol?
+    weak var viewControllerr: HomeViewControllerProtocol?
     private let coordinator: HomeCoordinatorProtocol
     
     init(coordinator: HomeCoordinatorProtocol) {
@@ -22,6 +23,8 @@ final class HomePresenter: HomePresenterProtocol {
     func present(selectedItem: ProductSearch) {}
     
     func presentLoading() {}
+    
+    func stopLoading() {}
     
     func presentEmptyState() {}
     

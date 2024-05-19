@@ -1,7 +1,10 @@
 import Foundation
 
 protocol ProductSearchServiceProtocol {
-    func fetchProducts(siteID: String, categoryID: String, completion: @escaping ((Result<ProductSearch, Error>) -> Void))
+    func fetchProducts(text: String,
+                       itemsPerPage: Int,
+                       page: Int,
+                       completion: @escaping ((Result<ProductSearch, Error>) -> Void))
 }
 
 final class ProductSearchService: ProductSearchServiceProtocol {
@@ -11,8 +14,11 @@ final class ProductSearchService: ProductSearchServiceProtocol {
         self.network = network
     }
     
-    func fetchProducts(siteID: String, categoryID: String, completion: @escaping ((Result<ProductSearch, Error>) -> Void)) {
-        let request = ProductSearchRequest(siteID: siteID, categoryID: categoryID)
+    func fetchProducts(text: String,
+                       itemsPerPage: Int,
+                       page: Int,
+                       completion: @escaping ((Result<ProductSearch, Error>) -> Void)) {
+        let request = ProductSearchRequest(text: text, itemsPerPage: itemsPerPage, page: page)
         
         network.execute(with: request) { (result: Result<ProductSearch, Error>) in
             switch result {
