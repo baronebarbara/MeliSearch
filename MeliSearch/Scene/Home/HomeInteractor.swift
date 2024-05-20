@@ -37,4 +37,31 @@ final class HomeInteractor: HomeInteractorProtocol {
             }
         }
     }
+    
+    func loadNextPage() {
+        // criar um loading pra celula self?.presenter.presentCellLoading()
+        
+        
+        service.fetchProducts(text: searchProduct, itemsPerPage: itemsPerPage, page: page) { [weak self] result in
+            // criar um loading pra celula self?.presenter.presentStopCellLoading()
+            
+            switch result {
+            case .success(let success) where success.results.isEmpty:
+                self?.presenter.presentEmptyState()
+            case .success(let success):
+                self?.page += 1
+                self?.presenter.present(productSearch: success)
+            case .failure(let failure):
+                self?.presenter.presentError()
+            }
+        }
+    }
+    
+    func welcome() {
+        // criar tela inicial
+    }
+    
+    func didSelect(productItem: ProductItem) {
+        presenter.present(selectedItem: productItem)
+    }
 }

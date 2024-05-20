@@ -5,10 +5,6 @@ struct API {
 }
 
 final class ApiURLConfig {
-    static var host: String? {
-        return get("API_HOST")
-    }
-    
     static var site: String? {
         return get("SITE_ID")
     }

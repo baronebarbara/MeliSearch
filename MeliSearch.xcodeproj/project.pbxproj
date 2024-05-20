@@ -24,6 +24,7 @@
 		877C89912BF2DC1000ED278D /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C89902BF2DC1000ED278D /* HomeInteractor.swift */; };
 		877C89932BF2DC1E00ED278D /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877C89922BF2DC1E00ED278D /* HomePresenter.swift */; };
 		8799A7B62BFAAE91005E484D /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8799A7B52BFAAE91005E484D /* HomeCoordinator.swift */; };
+		8799A7B92BFADAC8005E484D /* ProductItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8799A7B82BFADAC8005E484D /* ProductItem.swift */; };
 		87B7FDC72BF2F5D200AFA98E /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FDC62BF2F5D200AFA98E /* Strings.swift */; };
 		87B7FDCC2BF2FB9100AFA98E /* HomeErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FDCB2BF2FB9100AFA98E /* HomeErrorView.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		877C89902BF2DC1000ED278D /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		877C89922BF2DC1E00ED278D /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8799A7B52BFAAE91005E484D /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		8799A7B82BFADAC8005E484D /* ProductItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItem.swift; sourceTree = "<group>"; };
 		87B7FDC62BF2F5D200AFA98E /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		87B7FDCB2BF2FB9100AFA98E /* HomeErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeErrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 		873B2F2A2BEDB4F400CED958 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8799A7B72BFADAB4005E484D /* ProductItem */,
 				873B2F312BEDC20000CED958 /* ProductSearch */,
 			);
 			path = Service;
@@ -176,6 +179,14 @@
 				877C898E2BF2D99100ED278D /* ProductSearch.swift */,
 			);
 			path = ProductSearch;
+			sourceTree = "<group>";
+		};
+		8799A7B72BFADAB4005E484D /* ProductItem */ = {
+			isa = PBXGroup;
+			children = (
+				8799A7B82BFADAC8005E484D /* ProductItem.swift */,
+			);
+			path = ProductItem;
 			sourceTree = "<group>";
 		};
 		87B7FDC82BF2FB1400AFA98E /* State */ = {
@@ -284,6 +295,7 @@
 				877C89912BF2DC1000ED278D /* HomeInteractor.swift in Sources */,
 				873B2F2C2BEDB51300CED958 /* Request.swift in Sources */,
 				873B2F0A2BEB215900CED958 /* SceneDelegate.swift in Sources */,
+				8799A7B92BFADAC8005E484D /* ProductItem.swift in Sources */,
 				877C898F2BF2D99100ED278D /* ProductSearch.swift in Sources */,
 				87B7FDCC2BF2FB9100AFA98E /* HomeErrorView.swift in Sources */,
 				877C89932BF2DC1E00ED278D /* HomePresenter.swift in Sources */,

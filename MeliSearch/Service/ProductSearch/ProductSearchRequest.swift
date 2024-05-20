@@ -3,9 +3,9 @@ import Foundation
 struct ProductSearchRequest: Request {
     var method: HTTPMethod = .get
     var endpoint: String {
-        guard let host = ApiURLConfig.host, let site = ApiURLConfig.site else { return "" }
+        guard let site = ApiURLConfig.site else { return "" }
         
-        return "\(host)/sites/\(site)/search"
+        return "sites/\(site)/search"
     }
     var parameters: [URLQueryItem] { [URLQueryItem(name: "q", value: text),
                                       URLQueryItem(name: "limit", value: String(itemsPerPage)),

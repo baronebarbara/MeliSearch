@@ -2,7 +2,7 @@ import Foundation
 
 protocol HomePresenterProtocol {
     func present(productSearch: ProductSearch)
-    func present(selectedItem: ProductSearch)
+    func present(selectedItem: ProductItem)
     func presentLoading()
     func stopLoading()
     func presentEmptyState()
@@ -20,7 +20,7 @@ final class HomePresenter: HomePresenterProtocol {
     
     func present(productSearch: ProductSearch) {}
     
-    func present(selectedItem: ProductSearch) {}
+    func present(selectedItem: ProductItem) {}
     
     func presentLoading() {}
     
