@@ -2,6 +2,9 @@ import Foundation
 
 protocol HomeInteractorProtocol {
     func search(product: String?)
+    func loadNextPage()
+    func welcome()
+    func didSelect(productItem: ProductItem)
 }
 
 final class HomeInteractor: HomeInteractorProtocol {
