@@ -189,9 +189,25 @@
 			path = ProductItem;
 			sourceTree = "<group>";
 		};
+		8799A7BA2BFADC41005E484D /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Initial;
+			sourceTree = "<group>";
+		};
+		8799A7BB2BFADC4B005E484D /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 		87B7FDC82BF2FB1400AFA98E /* State */ = {
 			isa = PBXGroup;
 			children = (
+				8799A7BB2BFADC4B005E484D /* Loading */,
+				8799A7BA2BFADC41005E484D /* Initial */,
 				87B7FDCA2BF2FB3700AFA98E /* Error */,
 				87B7FDC92BF2FB2900AFA98E /* Empty */,
 			);
