@@ -16,11 +16,4 @@ struct ProductSearch: Decodable {
         totalResults = try paging.decode(Int.self, forKey: .total)
         results = try container.decode([ProductSearchDetail].self, forKey: .results)
     }
-    
-    struct ProductSearchDetail: Decodable {
-        let id: String
-        let title: String
-        let price: Double
-        let thumbnail: String
-    }
 }

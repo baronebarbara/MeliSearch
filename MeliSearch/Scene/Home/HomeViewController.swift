@@ -22,6 +22,7 @@ final class HomeViewController: UIViewController {
         search.translatesAutoresizingMaskIntoConstraints = false
         search.layer.cornerRadius = 16
         search.placeholder = Strings.HomeStrings.searchPlaceholderText
+        search.delegate = self
         return search
     }()
     
@@ -58,9 +59,13 @@ final class HomeViewController: UIViewController {
         layout.minimumLineSpacing = 12
         return layout
     }()
-    let service = ProductSearchService()
     
-    init() {
+    private var productsSearch: [ProductSearchDetail] = []
+    private var totalResults: Int = 0
+    private let interactor: HomeInteractorProtocol
+    
+    init(interactor: HomeInteractorProtocol) {
+        self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -70,6 +75,11 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         buildLayout()
         title = Strings.HomeStrings.title
+        interactor.initialState()
+    }
+    
+    private func shouldLoadNextPage(row: Int) -> Bool {
+        row == productsSearch.endIndex - 1 && totalResults > productsSearch.count
     }
 }
 
@@ -101,24 +111,25 @@ extension HomeViewController: ViewConfiguration {
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        return productsSearch.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeViewCell", for: indexPath) as? HomeViewCell else {
             return UICollectionViewCell()
         }
+        
+        cell.setup(productSearch: productsSearch[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedProduct = Product(id: 1, name: "Akina", description: "Não esta a venda apenas demonstração, porém quentinha e linda", price: 200.00)
-        
-        let detailProduct = ProductDetailsView(product: selectedProduct)
-        
-        let hostingController = UIHostingController(rootView: detailProduct)
-        
-        self.present(hostingController, animated: true)
+        interactor.didSelect(productItem: productsSearch[indexPath.row])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard shouldLoadNextPage(row: indexPath.row) else { return }
+        interactor.loadNextPage()
     }
 }
 
@@ -128,5 +139,67 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         let height: CGFloat = 200
         
         return CGSize(width: width, height: height)
+    }
+}
+
+extension HomeViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else { return }
+        productsSearch = []
+        interactor.search(product: searchText)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        interactor.initialState()
+    }
+}
+
+extension HomeViewController: HomeViewControllerProtocol {
+    func startLoading() {
+        
+    }
+    
+    func stopLoading() {
+        
+    }
+    
+    func show(search: ProductSearch) {
+        
+    }
+    
+    func showProductSearch(shouldShow: Bool) {
+        
+    }
+    
+    func showEmpty() {
+        
+    }
+    
+    func showError() {
+        
+    }
+    
+    func hideEmpty() {
+        
+    }
+    
+    func hideError() {
+        
+    }
+    
+    func showInitialState(shouldShow: Bool) {
+        
+    }
+    
+    func showErrorCell() {
+        
+    }
+    
+    func startLoadingCell() {
+        
+    }
+    
+    func stopLoadingCell() {
+        
     }
 }

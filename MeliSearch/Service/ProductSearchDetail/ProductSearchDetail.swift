@@ -1,6 +1,6 @@
 import Foundation
 
-struct ProductItem: Decodable {
+struct ProductSearchDetail: Decodable {
     let id: String
     let title: String
     let price: Double

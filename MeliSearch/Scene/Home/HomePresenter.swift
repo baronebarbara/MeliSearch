@@ -2,7 +2,7 @@ import Foundation
 
 protocol HomePresenterProtocol {
     func present(productSearch: ProductSearch)
-    func present(selectedItem: ProductItem)
+    func present(selectedItem: ProductSearchDetail)
     func presentLoading(shouldPresent: Bool)
     func presentEmptyState()
     func presentError()
@@ -11,7 +11,7 @@ protocol HomePresenterProtocol {
 }
 
 final class HomePresenter: HomePresenterProtocol {
-    weak var viewControllerr: HomeViewControllerProtocol?
+    weak var viewController: HomeViewControllerProtocol?
     private let coordinator: HomeCoordinatorProtocol
     
     init(coordinator: HomeCoordinatorProtocol) {
@@ -19,49 +19,49 @@ final class HomePresenter: HomePresenterProtocol {
     }
     
     func present(productSearch: ProductSearch) {
-        viewControllerr?.showInitialState(shouldShow: false)
-        viewControllerr?.hideEmpty()
-        viewControllerr?.hideError()
-        viewControllerr?.show(search: productSearch)
-        viewControllerr?.showProductSearch(shouldShow: true)
+        viewController?.showInitialState(shouldShow: false)
+        viewController?.hideEmpty()
+        viewController?.hideError()
+        viewController?.show(search: productSearch)
+        viewController?.showProductSearch(shouldShow: true)
     }
     
-    func present(selectedItem: ProductItem) {
+    func present(selectedItem: ProductSearchDetail) {
         coordinator.perform(action: .showProductItem(productItem: selectedItem))
     }
     
     func presentLoading(shouldPresent: Bool) {
-        viewControllerr?.showProductSearch(shouldShow: false)
-        viewControllerr?.showInitialState(shouldShow: false)
-        viewControllerr?.hideEmpty()
-        viewControllerr?.hideError()
-        shouldPresent ? viewControllerr?.startLoading() : viewControllerr?.stopLoading()
+        viewController?.showProductSearch(shouldShow: false)
+        viewController?.showInitialState(shouldShow: false)
+        viewController?.hideEmpty()
+        viewController?.hideError()
+        shouldPresent ? viewController?.startLoading() : viewController?.stopLoading()
     }
     
     func presentEmptyState() {
-        viewControllerr?.showProductSearch(shouldShow: false)
-        viewControllerr?.showInitialState(shouldShow: false)
-        viewControllerr?.hideEmpty()
-        viewControllerr?.hideError()
-        viewControllerr?.showEmpty()
+        viewController?.showProductSearch(shouldShow: false)
+        viewController?.showInitialState(shouldShow: false)
+        viewController?.hideEmpty()
+        viewController?.hideError()
+        viewController?.showEmpty()
     }
     
     func presentError() {
-        viewControllerr?.showProductSearch(shouldShow: false)
-        viewControllerr?.showInitialState(shouldShow: false)
-        viewControllerr?.hideEmpty()
-        viewControllerr?.hideError()
-        viewControllerr?.showError()
+        viewController?.showProductSearch(shouldShow: false)
+        viewController?.showInitialState(shouldShow: false)
+        viewController?.hideEmpty()
+        viewController?.hideError()
+        viewController?.showError()
     }
     
     func presentInitialState() {
-        viewControllerr?.showProductSearch(shouldShow: false)
-        viewControllerr?.hideEmpty()
-        viewControllerr?.hideError()
-        viewControllerr?.showInitialState(shouldShow: true)
+        viewController?.showProductSearch(shouldShow: false)
+        viewController?.hideEmpty()
+        viewController?.hideError()
+        viewController?.showInitialState(shouldShow: true)
     }
     
     func presentLoadingCell(shouldPresent: Bool) {
-        shouldPresent ? viewControllerr?.startLoadingCell() : viewControllerr?.stopLoadingCell()
+        shouldPresent ? viewController?.startLoadingCell() : viewController?.stopLoadingCell()
     }
 }

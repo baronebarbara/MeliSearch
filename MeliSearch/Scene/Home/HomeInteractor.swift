@@ -4,7 +4,7 @@ protocol HomeInteractorProtocol {
     func search(product: String?)
     func loadNextPage()
     func initialState()
-    func didSelect(productItem: ProductItem)
+    func didSelect(productItem: ProductSearchDetail)
 }
 
 final class HomeInteractor: HomeInteractorProtocol {
@@ -63,7 +63,7 @@ final class HomeInteractor: HomeInteractorProtocol {
         presenter.presentInitialState()
     }
     
-    func didSelect(productItem: ProductItem) {
+    func didSelect(productItem: ProductSearchDetail) {
         presenter.present(selectedItem: productItem)
     }
 }

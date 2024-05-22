@@ -30,7 +30,6 @@ final class HomeViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.textColor = UIColor(named: Strings.Color.background)
-        label .text = "Naldinho"
         return label
     }()
     
@@ -39,7 +38,6 @@ final class HomeViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = UIColor(named: Strings.Color.lightGray)
-        label.text = "R$ 500,00"
         return label
     }()
     
@@ -49,6 +47,18 @@ final class HomeViewCell: UICollectionViewCell {
     }
     
     required init?(coder: NSCoder) { nil }
+    
+    override func prepareForReuse() {
+        productImage.image = nil
+        titleLabel.text = nil
+        priceLabel.text = nil
+    }
+    
+    func setup(productSearch: ProductSearchDetail) {
+        // configurar imagem
+        titleLabel.text = productSearch.title
+        priceLabel.text = String(productSearch.price)
+    }
 }
 
 extension HomeViewCell: ViewConfiguration {
