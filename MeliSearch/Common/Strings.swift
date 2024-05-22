@@ -13,7 +13,7 @@ enum Strings {
     enum HomeStrings {
         static let title = "Produtos"
         static let searchPlaceholderText = "Buscar produtos no MeliSearch"
-        static let productsLabelText = "Conheça seus produtos disponíveis:"
+        static let productsLabelText = "Resultados da sua busca"
     }
     
     enum DetailsStrings {

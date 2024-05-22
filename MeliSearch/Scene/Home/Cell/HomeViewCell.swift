@@ -3,8 +3,7 @@ import UIKit
 final class HomeViewCell: UICollectionViewCell {
     private lazy var mainStack: UIStackView = {
         let stack = UIStackView()
-        stack.spacing = 16
-        stack.alignment = .center
+        stack.spacing = 6
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -28,7 +27,8 @@ final class HomeViewCell: UICollectionViewCell {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.numberOfLines = 0
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         label.textColor = UIColor(named: Strings.Color.background)
         return label
     }()
@@ -59,14 +59,12 @@ final class HomeViewCell: UICollectionViewCell {
             productImage.loadImage(from: productImageURL, placeholder: UIImage(named: "mercado-livre-logo"))
         }
         titleLabel.text = productSearch.title
-        priceLabel.text = String(productSearch.price)
+        priceLabel.text = productSearch.price.currencyFormat()
     }
 }
 
 extension HomeViewCell: ViewConfiguration {
-    func configViews() {
-        
-    }
+    func configViews() {}
     
     func buildViewHierarchy() {
         addSubview(mainStack)
@@ -80,9 +78,10 @@ extension HomeViewCell: ViewConfiguration {
         NSLayoutConstraint.activate([
             mainStack.topAnchor.constraint(equalTo: topAnchor),
             mainStack.leadingAnchor.constraint(equalTo: leadingAnchor),
+            mainStack.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            productImage.heightAnchor.constraint(equalToConstant: 150),
-            productImage.widthAnchor.constraint(equalToConstant: 150)
+            productImage.heightAnchor.constraint(equalToConstant: 120),
+            productImage.widthAnchor.constraint(equalToConstant: 120)
         ])
     }
 }
