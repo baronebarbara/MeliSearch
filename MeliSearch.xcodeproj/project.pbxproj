@@ -30,6 +30,7 @@
 		B104F9142BFD795600A9E610 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F9132BFD795600A9E610 /* HomeFactory.swift */; };
 		B104F9162BFD816100A9E610 /* UimageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F9152BFD816100A9E610 /* UimageView+Extension.swift */; };
 		B104F9192BFD889000A9E610 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F9182BFD889000A9E610 /* Double+Extension.swift */; };
+		B104F91B2BFD8B2900A9E610 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F91A2BFD8B2900A9E610 /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		B104F9132BFD795600A9E610 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		B104F9152BFD816100A9E610 /* UimageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UimageView+Extension.swift"; sourceTree = "<group>"; };
 		B104F9182BFD889000A9E610 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		B104F91A2BFD8B2900A9E610 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyView.swift; path = MeliSearch/Common/Extensions/EmptyView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 		87B7FDC92BF2FB2900AFA98E /* Empty */ = {
 			isa = PBXGroup;
 			children = (
+				B104F91A2BFD8B2900A9E610 /* EmptyView.swift */,
 			);
 			path = Empty;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			files = (
 				873B2F0C2BEB215900CED958 /* HomeViewController.swift in Sources */,
 				873B2F222BEC55AB00CED958 /* ViewConfiguration.swift in Sources */,
+				B104F91B2BFD8B2900A9E610 /* EmptyView.swift in Sources */,
 				B104F9192BFD889000A9E610 /* Double+Extension.swift in Sources */,
 				873B2F2E2BEDB8F800CED958 /* Network.swift in Sources */,
 				8799A7B62BFAAE91005E484D /* HomeCoordinator.swift in Sources */,

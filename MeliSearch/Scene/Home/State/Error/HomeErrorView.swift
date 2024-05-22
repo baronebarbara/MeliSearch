@@ -3,7 +3,7 @@ import UIKit
 final class HomeErrorView: UIView {
     private lazy var imageErrorView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: Strings.Images.logo)
+        image.image = UIImage(named: "chateado")
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()

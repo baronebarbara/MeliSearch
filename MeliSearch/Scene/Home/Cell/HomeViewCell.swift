@@ -4,6 +4,7 @@ final class HomeViewCell: UICollectionViewCell {
     private lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.spacing = 6
+        stack.alignment = .center
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()

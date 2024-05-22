@@ -66,6 +66,8 @@ final class HomeViewController: UIViewController {
         return activityIndicator
     }()
     
+    private lazy var emptyView = EmptyView()
+    
     private var productsSearch: [ProductSearchDetail] = []
     private var totalResults: Int = 0
     private let interactor: HomeInteractorProtocol
@@ -188,7 +190,14 @@ extension HomeViewController: HomeViewControllerProtocol {
     }
     
     func showEmpty() {
+        view.addSubview(emptyView)
+        view.bringSubviewToFront(emptyView)
         
+        NSLayoutConstraint.activate([
+            emptyView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            emptyView.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 32),
+            emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
     
     func showError() {
@@ -196,7 +205,7 @@ extension HomeViewController: HomeViewControllerProtocol {
     }
     
     func hideEmpty() {
-        
+        emptyView.removeFromSuperview()
     }
     
     func hideError() {
