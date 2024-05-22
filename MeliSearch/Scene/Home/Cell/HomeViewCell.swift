@@ -19,9 +19,9 @@ final class HomeViewCell: UICollectionViewCell {
     
     private lazy var productImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "mercado-livre-logo")
         image.layer.cornerRadius = 12
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.clipsToBounds = true
         return image
     }()
     
@@ -55,7 +55,9 @@ final class HomeViewCell: UICollectionViewCell {
     }
     
     func setup(productSearch: ProductSearchDetail) {
-        // configurar imagem
+        if let productImageURL = URL(string: productSearch.thumbnail) {
+            productImage.loadImage(from: productImageURL, placeholder: UIImage(named: "mercado-livre-logo"))
+        }
         titleLabel.text = productSearch.title
         priceLabel.text = String(productSearch.price)
     }

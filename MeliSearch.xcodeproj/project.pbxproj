@@ -28,6 +28,7 @@
 		87B7FDC72BF2F5D200AFA98E /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FDC62BF2F5D200AFA98E /* Strings.swift */; };
 		87B7FDCC2BF2FB9100AFA98E /* HomeErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FDCB2BF2FB9100AFA98E /* HomeErrorView.swift */; };
 		B104F9142BFD795600A9E610 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F9132BFD795600A9E610 /* HomeFactory.swift */; };
+		B104F9162BFD816100A9E610 /* UimageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F9152BFD816100A9E610 /* UimageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		87B7FDC62BF2F5D200AFA98E /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		87B7FDCB2BF2FB9100AFA98E /* HomeErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeErrorView.swift; sourceTree = "<group>"; };
 		B104F9132BFD795600A9E610 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
+		B104F9152BFD816100A9E610 /* UimageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UimageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		873B2F1B2BEC4FD900CED958 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B104F9172BFD817800A9E610 /* Extensions */,
 				873B2F212BEC55AB00CED958 /* ViewConfiguration.swift */,
 				87B7FDC62BF2F5D200AFA98E /* Strings.swift */,
 			);
@@ -232,6 +235,14 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		B104F9172BFD817800A9E610 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B104F9152BFD816100A9E610 /* UimageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,6 +323,7 @@
 				873B2F082BEB215900CED958 /* AppDelegate.swift in Sources */,
 				87B7FDC72BF2F5D200AFA98E /* Strings.swift in Sources */,
 				877C89912BF2DC1000ED278D /* HomeInteractor.swift in Sources */,
+				B104F9162BFD816100A9E610 /* UimageView+Extension.swift in Sources */,
 				873B2F2C2BEDB51300CED958 /* Request.swift in Sources */,
 				873B2F0A2BEB215900CED958 /* SceneDelegate.swift in Sources */,
 				8799A7B92BFADAC8005E484D /* ProductSearchDetail.swift in Sources */,
