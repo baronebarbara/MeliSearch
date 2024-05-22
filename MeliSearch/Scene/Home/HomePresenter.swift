@@ -7,7 +7,6 @@ protocol HomePresenterProtocol {
     func presentEmptyState()
     func presentError()
     func presentInitialState()
-    func presentLoadingCell(shouldPresent: Bool)
 }
 
 final class HomePresenter: HomePresenterProtocol {
@@ -59,9 +58,5 @@ final class HomePresenter: HomePresenterProtocol {
         viewController?.hideEmpty()
         viewController?.hideError()
         viewController?.showInitialState(shouldShow: true)
-    }
-    
-    func presentLoadingCell(shouldPresent: Bool) {
-        shouldPresent ? viewController?.startLoadingCell() : viewController?.stopLoadingCell()
     }
 }

@@ -11,9 +11,6 @@ protocol HomeViewControllerProtocol: AnyObject {
     func hideEmpty()
     func hideError()
     func showInitialState(shouldShow: Bool)
-    func showErrorCell()
-    func startLoadingCell()
-    func stopLoadingCell()
 }
 
 final class HomeViewController: UIViewController {
@@ -230,12 +227,6 @@ extension HomeViewController: HomeViewControllerProtocol {
     func showInitialState(shouldShow: Bool) {
         initialView.isHidden = !shouldShow
     }
-    
-    func showErrorCell() {}
-    
-    func startLoadingCell() {}
-    
-    func stopLoadingCell() {}
 }
 
 extension HomeViewController: ErrorViewDelegateProtocol {

@@ -42,10 +42,7 @@ final class HomeInteractor: HomeInteractorProtocol {
     }
     
     func loadNextPage() {
-        presenter.presentLoadingCell(shouldPresent: true)
-        
         service.fetchProducts(text: searchProduct, itemsPerPage: itemsPerPage, page: page) { [weak self] result in
-            self?.presenter.presentLoadingCell(shouldPresent: false)
             
             switch result {
             case .success(let success) where success.results.isEmpty:
