@@ -1,5 +1,10 @@
-import Foundation
+import UIKit
 
-protocol HomeCoordinatorProtocol {
-    
+enum HomeCoordinatorAction {
+    case showProductItem(productItem: ProductItem)
+}
+
+protocol HomeCoordinatorProtocol: AnyObject {
+    var viewController: UIViewController? { get set }
+    func perform(action: HomeCoordinatorAction)
 }

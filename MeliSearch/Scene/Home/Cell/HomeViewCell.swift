@@ -19,7 +19,7 @@ final class HomeViewCell: UICollectionViewCell {
     
     private lazy var productImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "mercao-livre-logo")
+        image.image = UIImage(named: "mercado-livre-logo")
         image.layer.cornerRadius = 12
         image.translatesAutoresizingMaskIntoConstraints = false
         return image

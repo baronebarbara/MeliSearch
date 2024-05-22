@@ -3,7 +3,7 @@ import Foundation
 protocol HomeInteractorProtocol {
     func search(product: String?)
     func loadNextPage()
-    func welcome()
+    func initialState()
     func didSelect(productItem: ProductItem)
 }
 
@@ -21,13 +21,13 @@ final class HomeInteractor: HomeInteractorProtocol {
     }
     
     func search(product: String?) {
-        presenter.presentLoading()
+        presenter.presentLoading(shouldPresent: true)
         
         page = product != nil ? 0 : page
         searchProduct = product ?? searchProduct
         
         service.fetchProducts(text: searchProduct, itemsPerPage: itemsPerPage, page: page) { [weak self] result in
-            self?.presenter.stopLoading()
+            self?.presenter.presentLoading(shouldPresent: false)
             
             switch result {
             case .success(let success) where success.results.isEmpty:
@@ -35,18 +35,17 @@ final class HomeInteractor: HomeInteractorProtocol {
             case .success(let success):
                 self?.page += 1
                 self?.presenter.present(productSearch: success)
-            case .failure(let failure):
+            case .failure(_):
                 self?.presenter.presentError()
             }
         }
     }
     
     func loadNextPage() {
-        // criar um loading pra celula self?.presenter.presentCellLoading()
-        
+        presenter.presentLoadingCell(shouldPresent: true)
         
         service.fetchProducts(text: searchProduct, itemsPerPage: itemsPerPage, page: page) { [weak self] result in
-            // criar um loading pra celula self?.presenter.presentStopCellLoading()
+            self?.presenter.presentLoadingCell(shouldPresent: false)
             
             switch result {
             case .success(let success) where success.results.isEmpty:
@@ -54,14 +53,14 @@ final class HomeInteractor: HomeInteractorProtocol {
             case .success(let success):
                 self?.page += 1
                 self?.presenter.present(productSearch: success)
-            case .failure(let failure):
+            case .failure(_):
                 self?.presenter.presentError()
             }
         }
     }
     
-    func welcome() {
-        // criar tela inicial
+    func initialState() {
+        presenter.presentInitialState()
     }
     
     func didSelect(productItem: ProductItem) {

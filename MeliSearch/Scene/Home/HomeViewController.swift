@@ -2,7 +2,18 @@ import SwiftUI
 import UIKit
 
 protocol HomeViewControllerProtocol: AnyObject {
-    
+    func startLoading()
+    func stopLoading()
+    func show(search: ProductSearch)
+    func showProductSearch(shouldShow: Bool)
+    func showEmpty()
+    func showError()
+    func hideEmpty()
+    func hideError()
+    func showInitialState(shouldShow: Bool)
+    func showErrorCell()
+    func startLoadingCell()
+    func stopLoadingCell()
 }
 
 final class HomeViewController: UIViewController {
