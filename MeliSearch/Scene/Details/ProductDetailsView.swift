@@ -3,28 +3,32 @@ import SwiftUI
 struct Product {
     var id: Int
     var name: String
-    var description: String
     var price: Double
+    var imageUrl: URL?
 }
 
 struct ProductDetailsView: View {
     var product: Product
-
+    
     var body: some View {
         VStack(spacing: 16) {
-            Image(systemName: "photo")
-                .frame(width: 375, height: 300)
-                .background(Color.red)
+            if let imageUrl = product.imageUrl {
+                RemoteImageView(url: imageUrl, placeholder: UIImage(systemName: Strings.Images.logo))
+                    .frame(width: 375, height: 300)
+            } else {
+                Image(Strings.Images.logo)
+                    .frame(width: 375, height: 300)
+            }
             Text(product.name)
                 .font(.title).bold()
-            Text(product.description)
-                .font(.title2)
+                .foregroundColor(Color(Strings.Color.background, bundle: nil))
             Text("Valor: R$ \(product.price, specifier: "%.2f")")
                 .font(.headline)
         }
+        .padding()
     }
 }
 
 #Preview {
-    ProductDetailsView(product: Product(id: 0, name: "Batata", description: "eles sao legais e estao na floresta brincando", price: 20.00))
+    ProductDetailsView(product: Product(id: 0, name: "Samsung Galaxy", price: 20.00))
 }

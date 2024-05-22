@@ -32,6 +32,7 @@
 		B104F9192BFD889000A9E610 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F9182BFD889000A9E610 /* Double+Extension.swift */; };
 		B104F91B2BFD8B2900A9E610 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F91A2BFD8B2900A9E610 /* EmptyView.swift */; };
 		B104F91D2BFD938100A9E610 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F91C2BFD938100A9E610 /* InitialView.swift */; };
+		B104F91F2BFD9A4D00A9E610 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F91E2BFD9A4D00A9E610 /* RemoteImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		B104F9182BFD889000A9E610 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		B104F91A2BFD8B2900A9E610 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyView.swift; path = MeliSearch/Common/Extensions/EmptyView.swift; sourceTree = SOURCE_ROOT; };
 		B104F91C2BFD938100A9E610 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InitialView.swift; path = MeliSearch/Common/Extensions/InitialView.swift; sourceTree = SOURCE_ROOT; };
+		B104F91E2BFD9A4D00A9E610 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				B104F9172BFD817800A9E610 /* Extensions */,
 				873B2F212BEC55AB00CED958 /* ViewConfiguration.swift */,
 				87B7FDC62BF2F5D200AFA98E /* Strings.swift */,
+				B104F91E2BFD9A4D00A9E610 /* RemoteImageView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				873B2F352BEDC51900CED958 /* ProductSearchService.swift in Sources */,
 				873B2F332BEDC22000CED958 /* ProductSearchRequest.swift in Sources */,
 				873B2F252BEC5DBF00CED958 /* HomeViewCell.swift in Sources */,
+				B104F91F2BFD9A4D00A9E610 /* RemoteImageView.swift in Sources */,
 				873B2F082BEB215900CED958 /* AppDelegate.swift in Sources */,
 				87B7FDC72BF2F5D200AFA98E /* Strings.swift in Sources */,
 				877C89912BF2DC1000ED278D /* HomeInteractor.swift in Sources */,
