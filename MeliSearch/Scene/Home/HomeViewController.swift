@@ -66,7 +66,9 @@ final class HomeViewController: UIViewController {
         return activityIndicator
     }()
     
+    private lazy var initialView = InitialView()
     private lazy var emptyView = EmptyView()
+    private lazy var errorView = HomeErrorView()
     
     private var productsSearch: [ProductSearchDetail] = []
     private var totalResults: Int = 0
@@ -99,6 +101,7 @@ extension HomeViewController: ViewConfiguration {
     func buildViewHierarchy() {
         view.addSubview(searchView)
         view.addSubview(mainStack)
+        view.addSubview(initialView)
         mainStack.addArrangedSubview(productsLabel)
         mainStack.addArrangedSubview(collection)
     }
@@ -109,6 +112,11 @@ extension HomeViewController: ViewConfiguration {
             searchView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             searchView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             
+            initialView.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 24),
+            initialView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
+            initialView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            initialView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+           
             mainStack.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 24),
             mainStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 24),
             mainStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
@@ -201,7 +209,14 @@ extension HomeViewController: HomeViewControllerProtocol {
     }
     
     func showError() {
+        view.addSubview(errorView)
+        view.bringSubviewToFront(errorView)
         
+        NSLayoutConstraint.activate([
+            errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            errorView.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 32),
+            errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
     
     func hideEmpty() {
@@ -209,22 +224,22 @@ extension HomeViewController: HomeViewControllerProtocol {
     }
     
     func hideError() {
-        
+        errorView.removeFromSuperview()
     }
     
     func showInitialState(shouldShow: Bool) {
-        
+        initialView.isHidden = !shouldShow
     }
     
-    func showErrorCell() {
-        
-    }
+    func showErrorCell() {}
     
-    func startLoadingCell() {
-        
-    }
+    func startLoadingCell() {}
     
-    func stopLoadingCell() {
-        
+    func stopLoadingCell() {}
+}
+
+extension HomeViewController: ErrorViewDelegateProtocol {
+    func didTapButton() {
+        interactor.search(product: nil)
     }
 }

@@ -1,10 +1,6 @@
 import UIKit
 
-protocol ErrorViewDelegateProtocol: AnyObject {
-    func didTapButton()
-}
-
-final class HomeErrorView: UIView {
+final class InitialView: UIView {
     private lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -13,9 +9,9 @@ final class HomeErrorView: UIView {
         return stack
     }()
     
-    private lazy var imageErrorView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: Strings.Images.chateado)
+        image.image = UIImage(named: Strings.Images.fofo)
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -25,7 +21,7 @@ final class HomeErrorView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 20)
         label.textColor = UIColor(named: Strings.Color.lightGray)
-        label.text = Strings.ErrorStrings.title
+        label.text = Strings.InitialStrings.title
         label.numberOfLines = 0
         return label
     }()
@@ -35,20 +31,10 @@ final class HomeErrorView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 14)
         label.textColor = UIColor(named: Strings.Color.lightGray)
-        label.text = Strings.ErrorStrings.message
+        label.text = Strings.InitialStrings.message
         label.numberOfLines = 0
         return label
     }()
-    
-    private lazy var mainButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(Strings.ErrorStrings.button, for: .normal)
-        button.setTitleColor(UIColor(named: Strings.Color.background), for: .normal)
-        button.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
-        return button
-    }()
-    
-    weak var delegate: ErrorViewDelegateProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,14 +43,9 @@ final class HomeErrorView: UIView {
     
     @available(*, unavailable)
     required init?(coder: NSCoder) { nil }
-    
-    @objc
-    private func actionButton() {
-        delegate?.didTapButton()
-    }
 }
 
-extension HomeErrorView: ViewConfiguration {
+extension InitialView: ViewConfiguration {
     func configViews() {
         backgroundColor = .white
         translatesAutoresizingMaskIntoConstraints = false
@@ -72,10 +53,9 @@ extension HomeErrorView: ViewConfiguration {
     
     func buildViewHierarchy() {
         addSubview(mainStack)
-        mainStack.addArrangedSubview(imageErrorView)
+        mainStack.addArrangedSubview(imageView)
         mainStack.addArrangedSubview(titleLabel)
         mainStack.addArrangedSubview(descriptionLabel)
-        mainStack.addArrangedSubview(mainButton)
     }
     
     func setupConstraints() {
@@ -84,7 +64,7 @@ extension HomeErrorView: ViewConfiguration {
             mainStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             mainStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             
-            imageErrorView.heightAnchor.constraint(equalToConstant: 300)
+            imageView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
 }

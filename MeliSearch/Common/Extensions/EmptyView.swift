@@ -10,7 +10,7 @@ final class EmptyView: UIView {
     }()
     
     private lazy var imageView: UIImageView = {
-        let view = UIImageView(image: UIImage(named: "triste"))
+        let view = UIImageView(image: UIImage(named: Strings.Images.triste))
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentCompressionResistancePriority(for: .vertical)
