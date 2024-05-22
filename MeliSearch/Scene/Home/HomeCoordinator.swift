@@ -5,7 +5,6 @@ enum HomeCoordinatorAction {
 }
 
 protocol HomeCoordinatorProtocol: AnyObject {
-    var viewController: UIViewController? { get set }
     func perform(action: HomeCoordinatorAction)
 }
 

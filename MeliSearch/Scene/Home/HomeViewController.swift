@@ -164,7 +164,9 @@ extension HomeViewController: HomeViewControllerProtocol {
     }
     
     func show(search: ProductSearch) {
-        
+        totalResults = search.totalResults
+        productsSearch.append(contentsOf: search.results)
+        collection.reloadData()
     }
     
     func showProductSearch(shouldShow: Bool) {
