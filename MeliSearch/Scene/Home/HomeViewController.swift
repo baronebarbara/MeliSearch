@@ -60,6 +60,12 @@ final class HomeViewController: UIViewController {
         return layout
     }()
     
+    private lazy var loading: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        return activityIndicator
+    }()
+    
     private var productsSearch: [ProductSearchDetail] = []
     private var totalResults: Int = 0
     private let interactor: HomeInteractorProtocol
@@ -156,11 +162,19 @@ extension HomeViewController: UISearchBarDelegate {
 
 extension HomeViewController: HomeViewControllerProtocol {
     func startLoading() {
+        view.addSubview(loading)
         
+        NSLayoutConstraint.activate([
+            loading.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loading.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
+        loading.startAnimating()
     }
     
     func stopLoading() {
-        
+        loading.stopAnimating()
+        loading.removeFromSuperview()
     }
     
     func show(search: ProductSearch) {
@@ -170,7 +184,7 @@ extension HomeViewController: HomeViewControllerProtocol {
     }
     
     func showProductSearch(shouldShow: Bool) {
-        
+        collection.isHidden = !shouldShow
     }
     
     func showEmpty() {
