@@ -180,7 +180,6 @@
 		873B2F2A2BEDB4F400CED958 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				8799A7B72BFADAB4005E484D /* ProductSearchDetail */,
 				873B2F312BEDC20000CED958 /* ProductSearch */,
 			);
 			path = Service;
@@ -189,19 +188,12 @@
 		873B2F312BEDC20000CED958 /* ProductSearch */ = {
 			isa = PBXGroup;
 			children = (
+				8799A7B82BFADAC8005E484D /* ProductSearchDetail.swift */,
 				873B2F322BEDC22000CED958 /* ProductSearchRequest.swift */,
 				873B2F342BEDC51900CED958 /* ProductSearchService.swift */,
 				877C898E2BF2D99100ED278D /* ProductSearch.swift */,
 			);
 			path = ProductSearch;
-			sourceTree = "<group>";
-		};
-		8799A7B72BFADAB4005E484D /* ProductSearchDetail */ = {
-			isa = PBXGroup;
-			children = (
-				8799A7B82BFADAC8005E484D /* ProductSearchDetail.swift */,
-			);
-			path = ProductSearchDetail;
 			sourceTree = "<group>";
 		};
 		8799A7BA2BFADC41005E484D /* Initial */ = {
