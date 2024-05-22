@@ -8,5 +8,5 @@ protocol Request {
 
 enum HTTPMethod: String {
     case get = "GET",
-         post = "POST"
+        post = "POST"
 }

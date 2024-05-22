@@ -2,10 +2,10 @@ import Foundation
 
 enum NetworkError: Error {
     case invalidURL,
-         invalidResponse,
-         noData,
-         decodingError(description: String),
-         requestError(description: String)
+        invalidResponse,
+        noData,
+        decodingError(description: String),
+        requestError(description: String)
 }
 
 protocol NetworkProtocol {
