@@ -33,7 +33,18 @@
 		B104F91B2BFD8B2900A9E610 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F91A2BFD8B2900A9E610 /* EmptyView.swift */; };
 		B104F91D2BFD938100A9E610 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F91C2BFD938100A9E610 /* InitialView.swift */; };
 		B104F91F2BFD9A4D00A9E610 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F91E2BFD9A4D00A9E610 /* RemoteImageView.swift */; };
+		B104F92B2BFD9FD100A9E610 /* HomeInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F92A2BFD9FD100A9E610 /* HomeInteractorSpec.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B104F92C2BFD9FD100A9E610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 873B2EFC2BEB215900CED958 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 873B2F032BEB215900CED958;
+			remoteInfo = MeliSearch;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		873B2F042BEB215900CED958 /* MeliSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeliSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,10 +75,19 @@
 		B104F91A2BFD8B2900A9E610 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyView.swift; path = MeliSearch/Common/Extensions/EmptyView.swift; sourceTree = SOURCE_ROOT; };
 		B104F91C2BFD938100A9E610 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InitialView.swift; path = MeliSearch/Common/Extensions/InitialView.swift; sourceTree = SOURCE_ROOT; };
 		B104F91E2BFD9A4D00A9E610 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
+		B104F9282BFD9FD100A9E610 /* MeliSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeliSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B104F92A2BFD9FD100A9E610 /* HomeInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		873B2F012BEB215900CED958 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B104F9252BFD9FD100A9E610 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -81,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				873B2F062BEB215900CED958 /* MeliSearch */,
+				B104F9292BFD9FD100A9E610 /* MeliSearchTests */,
 				873B2F052BEB215900CED958 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				873B2F042BEB215900CED958 /* MeliSearch.app */,
+				B104F9282BFD9FD100A9E610 /* MeliSearchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +261,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B104F9292BFD9FD100A9E610 /* MeliSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				B104F9312BFD9FF300A9E610 /* Scenes */,
+			);
+			path = MeliSearchTests;
+			sourceTree = "<group>";
+		};
+		B104F9312BFD9FF300A9E610 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B104F92A2BFD9FD100A9E610 /* HomeInteractorSpec.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,6 +297,24 @@
 			productReference = 873B2F042BEB215900CED958 /* MeliSearch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B104F9272BFD9FD100A9E610 /* MeliSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B104F9302BFD9FD100A9E610 /* Build configuration list for PBXNativeTarget "MeliSearchTests" */;
+			buildPhases = (
+				B104F9242BFD9FD100A9E610 /* Sources */,
+				B104F9252BFD9FD100A9E610 /* Frameworks */,
+				B104F9262BFD9FD100A9E610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B104F92D2BFD9FD100A9E610 /* PBXTargetDependency */,
+			);
+			name = MeliSearchTests;
+			productName = MeliSearchTests;
+			productReference = B104F9282BFD9FD100A9E610 /* MeliSearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -266,11 +322,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					873B2F032BEB215900CED958 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					B104F9272BFD9FD100A9E610 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 873B2F032BEB215900CED958;
 					};
 				};
 			};
@@ -288,6 +348,7 @@
 			projectRoot = "";
 			targets = (
 				873B2F032BEB215900CED958 /* MeliSearch */,
+				B104F9272BFD9FD100A9E610 /* MeliSearchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -299,6 +360,13 @@
 			files = (
 				873B2F112BEB215B00CED958 /* Assets.xcassets in Resources */,
 				873B2F142BEB215B00CED958 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B104F9262BFD9FD100A9E610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +404,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B104F9242BFD9FD100A9E610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B104F92B2BFD9FD100A9E610 /* HomeInteractorSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B104F92D2BFD9FD100A9E610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 873B2F032BEB215900CED958 /* MeliSearch */;
+			targetProxy = B104F92C2BFD9FD100A9E610 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		873B2F122BEB215B00CED958 /* LaunchScreen.storyboard */ = {
@@ -525,6 +609,44 @@
 			};
 			name = Release;
 		};
+		B104F92E2BFD9FD100A9E610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5H277L84SS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = barone.barbara.MeliSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeliSearch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeliSearch";
+			};
+			name = Debug;
+		};
+		B104F92F2BFD9FD100A9E610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5H277L84SS;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = barone.barbara.MeliSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeliSearch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MeliSearch";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -542,6 +664,15 @@
 			buildConfigurations = (
 				873B2F192BEB215B00CED958 /* Debug */,
 				873B2F1A2BEB215B00CED958 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B104F9302BFD9FD100A9E610 /* Build configuration list for PBXNativeTarget "MeliSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B104F92E2BFD9FD100A9E610 /* Debug */,
+				B104F92F2BFD9FD100A9E610 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
