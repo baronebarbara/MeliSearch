@@ -57,7 +57,7 @@ final class HomeViewCell: UICollectionViewCell {
     
     func setup(productSearch: ProductSearchDetail) {
         if let productImageURL = URL(string: productSearch.thumbnail) {
-            productImage.loadImage(from: productImageURL, placeholder: UIImage(named: "mercado-livre-logo"))
+            productImage.loadImage(from: productImageURL, placeholder: UIImage(named: Strings.Images.logo))
         }
         titleLabel.text = productSearch.title
         priceLabel.text = productSearch.price.currencyFormat()

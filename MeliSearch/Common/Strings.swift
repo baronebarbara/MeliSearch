@@ -34,8 +34,4 @@ enum Strings {
         static let message = "Você pode tentar novamente mais tarde"
         static let button = "Tentar novamente"
     }
-    
-    enum DetailsStrings {
-        
-    }
 }
