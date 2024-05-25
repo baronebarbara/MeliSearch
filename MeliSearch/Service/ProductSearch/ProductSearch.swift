@@ -1,6 +1,6 @@
 import Foundation
 
-struct ProductSearch: Decodable {
+struct ProductSearch: Decodable, Equatable {
     let totalResults: Int
     let results: [ProductSearchDetail]
     

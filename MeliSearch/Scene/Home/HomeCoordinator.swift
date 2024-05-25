@@ -1,7 +1,7 @@
 import SwiftUI
 import UIKit
 
-enum HomeCoordinatorAction {
+enum HomeCoordinatorAction: Equatable {
     case showProductItem(productItem: ProductSearchDetail)
 }
 

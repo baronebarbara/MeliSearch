@@ -24,11 +24,11 @@ final class HomePresenter: HomePresenterProtocol {
         viewController?.show(search: productSearch)
         viewController?.showProductSearch(shouldShow: true)
     }
-    
+
     func present(selectedItem: ProductSearchDetail) {
         coordinator.perform(action: .showProductItem(productItem: selectedItem))
     }
-    
+
     func presentLoading(shouldPresent: Bool) {
         viewController?.showProductSearch(shouldShow: false)
         viewController?.showInitialState(shouldShow: false)
@@ -36,7 +36,7 @@ final class HomePresenter: HomePresenterProtocol {
         viewController?.hideError()
         shouldPresent ? viewController?.startLoading() : viewController?.stopLoading()
     }
-    
+
     func presentEmptyState() {
         viewController?.showProductSearch(shouldShow: false)
         viewController?.showInitialState(shouldShow: false)
@@ -44,15 +44,14 @@ final class HomePresenter: HomePresenterProtocol {
         viewController?.hideError()
         viewController?.showEmpty()
     }
-    
+
     func presentError() {
         viewController?.showProductSearch(shouldShow: false)
         viewController?.showInitialState(shouldShow: false)
         viewController?.hideEmpty()
-        viewController?.hideError()
         viewController?.showError()
     }
-    
+
     func presentInitialState() {
         viewController?.showProductSearch(shouldShow: false)
         viewController?.hideEmpty()

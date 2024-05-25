@@ -66,7 +66,8 @@ final class HomeInteractorSpec: XCTestCase {
     private let presenter = HomePresenterSpy()
     private let service = ProductSearchServiceStub()
 
-    private lazy var sut = HomeInteractor(presenter: presenter, service: service)
+    private lazy var sut = HomeInteractor(presenter: presenter, 
+                                          service: service)
 
     func test_SearchProduct_ThenSuccess_ShouldCallCorrectlyMethods() {
         sut.search(product: "iPhone")

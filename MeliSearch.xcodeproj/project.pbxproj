@@ -35,6 +35,7 @@
 		B104F9342BFDA18C00A9E610 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F9332BFDA18C00A9E610 /* EmptyView.swift */; };
 		B104F9372BFDA1AB00A9E610 /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F9362BFDA1AB00A9E610 /* InitialView.swift */; };
 		B104F93E2C01814300A9E610 /* HomeMockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F93D2C01814300A9E610 /* HomeMockResponse.swift */; };
+		B104F9402C018ED800A9E610 /* HomePresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B104F93F2C018ED800A9E610 /* HomePresenterSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		B104F9332BFDA18C00A9E610 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		B104F9362BFDA1AB00A9E610 /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		B104F93D2C01814300A9E610 /* HomeMockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMockResponse.swift; sourceTree = "<group>"; };
+		B104F93F2C018ED800A9E610 /* HomePresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,12 +122,12 @@
 		873B2F062BEB215900CED958 /* MeliSearch */ = {
 			isa = PBXGroup;
 			children = (
+				873B2F1F2BEC533200CED958 /* Scene */,
 				873B2F2A2BEDB4F400CED958 /* Service */,
 				873B2F292BEDB4DD00CED958 /* Networking */,
 				873B2F152BEB215B00CED958 /* Info.plist */,
 				873B2F1C2BEC52A000CED958 /* AppConfiguration */,
 				873B2F1B2BEC4FD900CED958 /* Common */,
-				873B2F1F2BEC533200CED958 /* Scene */,
 			);
 			path = MeliSearch;
 			sourceTree = "<group>";
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				B104F92A2BFD9FD100A9E610 /* HomeInteractorSpec.swift */,
+				B104F93F2C018ED800A9E610 /* HomePresenterSpec.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B104F92B2BFD9FD100A9E610 /* HomeInteractorSpec.swift in Sources */,
+				B104F9402C018ED800A9E610 /* HomePresenterSpec.swift in Sources */,
 				B104F93E2C01814300A9E610 /* HomeMockResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
