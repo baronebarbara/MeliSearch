@@ -26,34 +26,11 @@ final class HomeInteractor: HomeInteractorProtocol {
         page = product != nil ? 0 : page
         searchProduct = product ?? searchProduct
         
-        service.fetchProducts(text: searchProduct, itemsPerPage: itemsPerPage, page: page) { [weak self] result in
-            self?.presenter.presentLoading(shouldPresent: false)
-            
-            switch result {
-            case .success(let success) where success.results.isEmpty:
-                self?.presenter.presentEmptyState()
-            case .success(let success):
-                self?.page += 1
-                self?.presenter.present(productSearch: success)
-            case .failure(_):
-                self?.presenter.presentError()
-            }
-        }
+        fetchProducts()
     }
     
     func loadNextPage() {
-        service.fetchProducts(text: searchProduct, itemsPerPage: itemsPerPage, page: page) { [weak self] result in
-            
-            switch result {
-            case .success(let success) where success.results.isEmpty:
-                self?.presenter.presentEmptyState()
-            case .success(let success):
-                self?.page += 1
-                self?.presenter.present(productSearch: success)
-            case .failure(_):
-                self?.presenter.presentError()
-            }
-        }
+        fetchProducts()
     }
     
     func initialState() {
@@ -62,5 +39,20 @@ final class HomeInteractor: HomeInteractorProtocol {
     
     func didSelect(productItem: ProductSearchDetail) {
         presenter.present(selectedItem: productItem)
+    }
+
+    private func fetchProducts() {
+        service.fetchProducts(text: searchProduct, itemsPerPage: itemsPerPage, page: page) { [weak self] response in
+            self?.presenter.presentLoading(shouldPresent: false)
+            if response.results.isEmpty {
+                self?.presenter.presentEmptyState()
+            } else {
+                self?.page += 1
+                self?.presenter.present(productSearch: response)
+            }
+        } failure: { [presenter] in
+            presenter.presentLoading(shouldPresent: false)
+            presenter.presentError()
+        }
     }
 }
